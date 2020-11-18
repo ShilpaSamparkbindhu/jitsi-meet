@@ -17,6 +17,6 @@ jobs:
     - uses: actions/download-artifact@v2
       with:
         name: my-single-artifact
-        needs: build
+    -needs: build
     - name: Display structure of downloaded files
       run: ls -R
