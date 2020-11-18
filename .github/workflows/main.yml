@@ -14,9 +14,13 @@ jobs:
     - run: npm install
     - run: npm run lint
     - run: make
+  run-artifact:
+    name: Download Artifact
+    needs: run-ci
+    runs-on: ubuntu-latest
+    steps:
     - uses: actions/download-artifact@v2
       with:
         name: my-single-artifact
-    -needs: build
     - name: Display structure of downloaded files
       run: ls -R
