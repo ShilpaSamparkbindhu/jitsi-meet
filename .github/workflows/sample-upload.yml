@@ -30,14 +30,22 @@ jobs:
         run : |
           echo 'Go inside downloadArtifacts'
           cd downloadArtifacts
+          echo 'Make download_libs'
+          mkdir download_libs
+          echo 'Make download_langs'
+          mkdir download_lang
+          echo 'Make download_images'
+          mkdir download_images
+          echo 'Make download_css'
+          mkdir download_css
           echo 'Copy libs'
-          cp -r libs
+          cp -r libs download_libs
           echo 'Copy lang/*'
-          cp -r lang/*
+          cp -r lang/* download_langs/
           echo 'Copy images/*'
-          cp -r images/*
+          cp -r images/* download_images/
           echo 'Copy css/all.css
-          cp css/all.css
+          cp css/all.css download_css/
           echo 'Copy index.html'
           cp index.html
           cd ..
