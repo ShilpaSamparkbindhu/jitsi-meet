@@ -1,0 +1,31 @@
+# Example to create actions artifacts
+name: Example of Actions Artifacts
+
+on:
+  push:
+    branches: [ master ]
+    
+jobs:
+  
+  build-artifacts:
+    runs-on: ubuntu-latest
+    steps:
+      
+      - name: Create a temparory artifact downloads folder
+        run: mkdir downloads
+        
+      - name: Add artifacts to the temporary folder
+        run: |
+          cd downloads
+          echo `alpha`    > alpha.html
+          echo `bravo`    > bravo.html
+          echo `charlie`  > charlie.html
+          cd ..
+      
+      - name: Use the Upload artifact action
+        uses: actions/upload-artifact@v2
+        with:
+          name: assets-for-download
+          path: downloads
+
+    
