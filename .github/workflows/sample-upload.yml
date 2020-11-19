@@ -1,0 +1,49 @@
+name: Main Workflow
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  
+  run-ci:
+    name: Build Frontend
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '12.x'
+    - run: npm install
+    - run: npm run lint
+    - run: make
+  
+  upload-artifact:
+    name: Upload Artifact
+    runs-on: ubuntu-latest
+    needs: run-ci
+    steps:
+      - name: Create a new Directory to store the downloaded artifacts
+        run: mkdir downloadArtifacts
+      
+      - name: Add Artifacts to the downloadArtifacts directory
+        run : |
+          echo 'Go inside downloadArtifacts'
+          cd downloadArtifacts
+          echo 'Copy libs'
+          cp -r libs
+          echo 'Copy lang/*'
+          cp -r lang/*
+          echo 'Copy images/*'
+          cp -r images/*
+          echo 'Copy css/all.css
+          cp css/all.css
+          echo 'Copy index.html'
+          cp index.html
+          cd ..
+        
+      - name: Use the upload artifact action
+        uses: actions/upload-artifact@v2
+        with:
+          name: download-build-files
+          path: downloadArtifacts
