@@ -26,10 +26,11 @@ jobs:
         echo 'Go inside downloadArtifacts'
         cd downloadArtifacts
         echo 'Make libs directory'
-        mkdir libs
+        mkdir download_libs
         echo 'Copy the files'
-        cp -r libs libs
+        cp -r libs download_libs
         cp all.bundle.css
+        cd ..
 #         cp \build/app.bundle.min.js \build/app.bundle.min.map \build/do_external_connect.min.js \build/do_external_connect.min.map \build/external_api.min.js \build/external_api.min.map \build/flacEncodeWorker.min.js \build/flacEncodeWorker.min.map \build/device_selection_popup_bundle.min.js \build/device_selection_popup_bundle.min.map \build/dial_in_info_bundle.min.js \build/dial_in_info_bundle.min.map \build/alwaysontop.min.js \build/alwaysontop.min.map \./analytics-ga.js \build/analytics-ga.min.js \build/analytics-ga.min.map \build/video-blur-effect.min.js \build/video-blur-effect.min.map \build/rnnoise-processor.min.js \build/rnnoise-processor.min.map \build/close3.min.js \build/close3.min.map \libs
 #         cp \node_modules/rnnoise-wasm/dist//rnnoise.wasm \libs libs
 #         cp \node_modules/lib-jitsi-meet//lib-jitsi-meet.min.js \node_modules/lib-jitsi-meet//lib-jitsi-meet.min.map \node_modules/lib-jitsi-meet//lib-jitsi-meet.e2ee-worker.js \node_modules/lib-jitsi-meet//connection_optimization/external_connect.js \node_modules/lib-jitsi-meet//modules/browser/capabilities.json \libs
