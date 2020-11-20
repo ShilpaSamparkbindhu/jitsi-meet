@@ -36,6 +36,8 @@ jobs:
           cp -r /home/runner/work/jitsi-meet/jitsi-meet/images/* /home/runner/work/jitsi-meet/jitsi-meet/downloadArtifacts/images
           cp -r /home/runner/work/jitsi-meet/jitsi-meet/lang/* /home/runner/work/jitsi-meet/jitsi-meet/downloadArtifacts/lang
           cp -r /home/runner/work/jitsi-meet/jitsi-meet/libs /home/runner/work/jitsi-meet/jitsi-meet/downloadArtifacts/
+          pwd
+          ls
           cd ..
     
   upload-artifact:
