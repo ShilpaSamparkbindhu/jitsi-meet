@@ -31,18 +31,18 @@ jobs:
     runs-on: ubuntu-latest
     needs: run-ci
     steps: 
-    - name: Make a directory and store the artifacts inside it
-    - run: |
-          mkdir downloadArtifacts
-          cd downloadArtifacts
-          mkdir css
-          mkdir lang
-          mkdir images
-          cp /home/runner/work/jitsi-meet/jitsi-meet/index.html /downloadArtifacts/
-          cp -r /home/runner/work/jitsi-meet/jitsi-meet/css/all.css /downloadArtifacts/css
-          cp -r /home/runner/work/jitsi-meet/jitsi-meet/images/* /downloadArtifacts/images
-          cp -r /home/runner/work/jitsi-meet/jitsi-meet/lang/* /downloadArtifacts/lang
-          cp -r /home/runner/work/jitsi-meet/jitsi-meet/libs /downloadArtifacts/
+#     - name: Make a directory and store the artifacts inside it
+#     - run: |
+#           mkdir downloadArtifacts
+#           cd downloadArtifacts
+#           mkdir css
+#           mkdir lang
+#           mkdir images
+#           cp /home/runner/work/jitsi-meet/jitsi-meet/index.html /downloadArtifacts/
+#           cp -r /home/runner/work/jitsi-meet/jitsi-meet/css/all.css /downloadArtifacts/css
+#           cp -r /home/runner/work/jitsi-meet/jitsi-meet/images/* /downloadArtifacts/images
+#           cp -r /home/runner/work/jitsi-meet/jitsi-meet/lang/* /downloadArtifacts/lang
+#           cp -r /home/runner/work/jitsi-meet/jitsi-meet/libs /downloadArtifacts/
     - name: Use the upload artifact action
       uses: actions/upload-artifact@v2
       with:
