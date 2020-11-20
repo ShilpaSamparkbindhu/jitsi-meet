@@ -34,14 +34,14 @@ jobs:
           mkdir css
           mkdir lang
           mkdir images
-    - name: Store the artifacts inside the downloadArtifacts directory
-      run: |
-          cp /home/runner/work/jitsi-meet/jitsi-meet/index.html /home/runner/work/jitsi-meet/jitsi-meet/downloadArtifacts/
-          cp -r /home/runner/work/jitsi-meet/jitsi-meet/css/all.css /home/runner/work/jitsi-meet/jitsi-meet/downloadArtifacts/css
-          cp -r /home/runner/work/jitsi-meet/jitsi-meet/images/* /home/runner/work/jitsi-meet/jitsi-meet/downloadArtifacts/images
-          cp -r /home/runner/work/jitsi-meet/jitsi-meet/lang/* /home/runner/work/jitsi-meet/jitsi-meet/downloadArtifacts/lang
-          cp -r /home/runner/work/jitsi-meet/jitsi-meet/libs /home/runner/work/jitsi-meet/jitsi-meet/downloadArtifacts/
-          cd ..
+#     - name: Store the artifacts inside the downloadArtifacts directory
+#       run: |
+#           cp /home/runner/work/jitsi-meet/jitsi-meet/index.html /home/runner/work/jitsi-meet/jitsi-meet/downloadArtifacts/
+#           cp -r /home/runner/work/jitsi-meet/jitsi-meet/css/all.css /home/runner/work/jitsi-meet/jitsi-meet/downloadArtifacts/css
+#           cp -r /home/runner/work/jitsi-meet/jitsi-meet/images/* /home/runner/work/jitsi-meet/jitsi-meet/downloadArtifacts/images
+#           cp -r /home/runner/work/jitsi-meet/jitsi-meet/lang/* /home/runner/work/jitsi-meet/jitsi-meet/downloadArtifacts/lang
+#           cp -r /home/runner/work/jitsi-meet/jitsi-meet/libs /home/runner/work/jitsi-meet/jitsi-meet/downloadArtifacts/
+#           cd ..
 #     - run: echo 'Copy complete'
 #     - run: echo ' Dummy'
     - name: Use the upload artifact action
