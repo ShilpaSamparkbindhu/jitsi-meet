@@ -17,9 +17,6 @@ jobs:
     - run: npm install
     - run: npm run lint
     - run: make
-    - run: pwd
-    - run: ls
-    - run: ls css
     
     - name: Make a directory 
       run: |
@@ -36,39 +33,9 @@ jobs:
           cp -r /home/runner/work/jitsi-meet/jitsi-meet/images/* /home/runner/work/jitsi-meet/jitsi-meet/downloadArtifacts/images
           cp -r /home/runner/work/jitsi-meet/jitsi-meet/lang/* /home/runner/work/jitsi-meet/jitsi-meet/downloadArtifacts/lang
           cp -r /home/runner/work/jitsi-meet/jitsi-meet/libs /home/runner/work/jitsi-meet/jitsi-meet/downloadArtifacts/
-          pwd
-          ls
           cd ..
     - name: Use the upload artifact action
       uses: actions/upload-artifact@v2
       with:
           name: download-lib-files
           path: /home/runner/work/jitsi-meet/jitsi-meet/downloadArtifacts
-#   upload-artifact:
-#     name: Upload Artifact
-#     runs-on: ubuntu-latest
-#     needs: run-ci
-#     steps: 
-#     - name: Make a directory 
-#       run: |
-#           mkdir downloadArtifacts
-#           cd downloadArtifacts
-#           pwd
-#           mkdir css
-#           mkdir lang
-#           mkdir images
-# #     - name: Store the artifacts inside the downloadArtifacts directory
-# #       run: |
-# #           cp /home/runner/work/jitsi-meet/jitsi-meet/index.html /home/runner/work/jitsi-meet/jitsi-meet/downloadArtifacts/
-# #           cp -r /home/runner/work/jitsi-meet/jitsi-meet/css/all.css /home/runner/work/jitsi-meet/jitsi-meet/downloadArtifacts/css
-# #           cp -r /home/runner/work/jitsi-meet/jitsi-meet/images/* /home/runner/work/jitsi-meet/jitsi-meet/downloadArtifacts/images
-# #           cp -r /home/runner/work/jitsi-meet/jitsi-meet/lang/* /home/runner/work/jitsi-meet/jitsi-meet/downloadArtifacts/lang
-# #           cp -r /home/runner/work/jitsi-meet/jitsi-meet/libs /home/runner/work/jitsi-meet/jitsi-meet/downloadArtifacts/
-# #           cd ..
-#     - run: echo 'Copy complete'
-#     - run: echo ' Dummy'
-#     - name: Use the upload artifact action
-#       uses: actions/upload-artifact@v2
-#       with:
-#           name: download-lib-files
-#           path: /home/runner/work/jitsi-meet/jitsi-meet/downloadArtifacts
