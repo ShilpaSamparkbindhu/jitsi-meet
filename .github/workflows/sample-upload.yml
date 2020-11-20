@@ -32,8 +32,7 @@ jobs:
     needs: run-ci
     steps: 
     - name: Make a directory 
-    - run: |
-          mkdir downloadArtifacts
+    - run: mkdir downloadArtifacts
 #           cd downloadArtifacts
 #           mkdir css
 #           mkdir lang
