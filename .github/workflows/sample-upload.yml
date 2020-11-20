@@ -14,9 +14,9 @@ jobs:
     - uses: actions/setup-node@v1
       with:
         node-version: '12.x'
-#     - run: |
-#         echo 'Make Directory'
-#         mkdir downloadArtifacts
+    - run: |
+        echo 'Make Directory'
+        mkdir downloadArtifacts
 #     - run: |
 #         echo 'Go inside downloadArtifacts and run npm install, npm run lint, and make'
 #         cd downloadArtifacts
@@ -32,11 +32,11 @@ jobs:
     needs: run-ci
     steps: 
     - name: Make a directory 
-    - run: mkdir downloadArtifacts
-#           cd downloadArtifacts
-#           mkdir css
-#           mkdir lang
-#           mkdir images
+    - run: |
+          cd downloadArtifacts
+          mkdir css
+          mkdir lang
+          mkdir images
 #     - name: Store the artifacts inside the downloadArtifacts directory
 #     - run: |
 #           cp /home/runner/work/jitsi-meet/jitsi-meet/index.html /downloadArtifacts/
