@@ -17,15 +17,17 @@ jobs:
     - run: |
         echo 'Make Directory'
         mkdir downloadArtifacts
-    - run: |
-        echo 'Go inside downloadArtifacts and run npm install, npm run lint, and make'
-        cd downloadArtifacts
+#     - run: |
+#         echo 'Go inside downloadArtifacts and run npm install, npm run lint, and make'
+#         cd downloadArtifacts
     - run: npm install
     - run: npm run lint
     - run: make
-    - run: |
-        echo 'Come out of downloadArtifacts'
-        cd ..
+    - run: pwd
+    - run: ls
+#     - run: |
+#         echo 'Come out of downloadArtifacts'
+#         cd ..
     
 #     - name: Create a new Directory to store the downloaded artifacts
 #       run: mkdir downloadArtifacts
