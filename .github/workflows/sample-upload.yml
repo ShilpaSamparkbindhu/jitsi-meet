@@ -45,8 +45,9 @@ jobs:
           cp -r /home/runner/work/jitsi-meet/jitsi-meet/images/* /downloadArtifacts/images
           cp -r /home/runner/work/jitsi-meet/jitsi-meet/lang/* /downloadArtifacts/lang
           cp -r /home/runner/work/jitsi-meet/jitsi-meet/libs /downloadArtifacts/
-    - name: Use the upload artifact action
-      uses: actions/upload-artifact@v2
-      with:
-          name: download-build-files
-          path: downloadArtifacts
+    - run: echo 'Copy complete'
+#     - name: Use the upload artifact action
+#       uses: actions/upload-artifact@v2
+#       with:
+#           name: download-build-files
+#           path: downloadArtifacts
