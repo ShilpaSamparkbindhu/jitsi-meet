@@ -14,12 +14,6 @@ jobs:
     - uses: actions/setup-node@v1
       with:
         node-version: '12.x'
-    - run: |
-        echo 'Make Directory'
-        mkdir downloadArtifacts
-#     - run: |
-#         echo 'Go inside downloadArtifacts and run npm install, npm run lint, and make'
-#         cd downloadArtifacts
     - run: npm install
     - run: npm run lint
     - run: make
@@ -33,7 +27,9 @@ jobs:
     steps: 
     - name: Make a directory 
       run: |
+          mkdir downloadArtifacts
           cd downloadArtifacts
+          pwd
           mkdir css
           mkdir lang
           mkdir images
