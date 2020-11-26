@@ -1,3 +1,4 @@
+// @flow
 /* global interfaceConfig */
 
 import React from 'react';
